@@ -1,0 +1,30 @@
+{% extends "template.html" %}
+{% block content %}
+  <div class="login-wrapper">
+    <h2>Welcome to the Flask Blog!</h2>
+    <h3>Please log in to access your blog.</h3>
+
+    <form action="" method="post">
+      <!-- action attribute is empty,meaning this form data will be 
+        send to the current page -->
+      <div>
+        <!--This name attribute for form element can be used as a ferference when the data is submitted. -->
+        <label for="username">Username:</lable>
+        <input type="text" id="username" name="username" 
+          value="{{request.form.username}}">
+      </div>
+
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"
+          value="{{request.form.password}}" />
+      </div>
+
+      <div>
+        <button type="submit">Log In</button>
+      </div>
+
+    </form>
+    <p>Temp Log in:<a href="/main">Log in </a></p>
+  </div>
+{% endblock %}
